@@ -9,7 +9,6 @@ import {
   X,
   CheckCircle2,
 } from 'lucide-react';
-import type { Contact } from '@/types';
 import { useContacts } from '@/hooks/useData';
 import { parseContacts, detectFormat, type ParsedContact } from '@/lib/csvParser';
 
@@ -77,10 +76,10 @@ export function Contacts() {
 
   const downloadSampleCSV = () => {
     const sample = `name,email,phone,company,tags
-John Smith,john@acme.com,+1234567890,Acme Corp;VIP;Enterprise
-Jane Doe,jane@tech.io,+1987654321,TechIO;Startup
-Bob Johnson,bob@retail.com,+15551234567,RetailCo;Customer
-Alice Lee,alice@finance.org,+14445556666,FinanceOrg;VIP`;
+John Smith,john@acme.com,+1234567890,Acme Corp,VIP;Enterprise
+Jane Doe,jane@tech.io,+1987654321,TechIO,Startup
+Bob Johnson,bob@retail.com,+15551234567,RetailCo,Customer
+Alice Lee,alice@finance.org,+14445556666,FinanceOrg,VIP`;
     const blob = new Blob([sample], { type: 'text/csv' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');

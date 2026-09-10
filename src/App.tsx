@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Sidebar, type ViewId } from '@/components/Sidebar';
 import { Dashboard } from '@/components/Dashboard';
 import { Contacts } from '@/components/Contacts';
@@ -12,11 +12,10 @@ import { useContacts, useTemplates } from '@/hooks/useData';
 function App() {
   const [view, setView] = useState<ViewId>('dashboard');
   const wsConnected = useWebSocketStatus();
-  const { contacts, loading: contactsLoading } = useContacts();
-  const { templates, loading: templatesLoading } = useTemplates();
+  const { contacts } = useContacts();
+  const { templates } = useTemplates();
   const {
     campaigns,
-    loading: campaignsLoading,
     progress,
     liveFeed,
     launchCampaign,
