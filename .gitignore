@@ -21,3 +21,7 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# Vite generated timestamp modules (do not commit)
+*.timestamp-*.mjs
+vite.config.*.timestamp-*
