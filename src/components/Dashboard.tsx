@@ -23,7 +23,6 @@ interface DashboardProps {
 export function Dashboard({ campaigns, contacts, templates, progress, liveFeed, onNavigate }: DashboardProps) {
   const totalSent = campaigns.reduce((s, c) => s + c.sent, 0);
   const totalDelivered = campaigns.reduce((s, c) => s + c.delivered, 0);
-  const totalFailed = campaigns.reduce((s, c) => s + c.failed, 0);
   const activeCampaigns = campaigns.filter((c) => c.status === 'sending' || c.status === 'queued');
   const deliveryRate = totalSent > 0 ? Math.round((totalDelivered / totalSent) * 100) : 0;
 
